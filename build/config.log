@@ -1,6 +1,6 @@
-# project ns (3-dev) configured on Mon Sep 25 16:27:41 2017 by
+# project ns (3-dev) configured on Mon Oct  2 12:40:14 2017 by
 # waf 1.8.19 (abi 98, python 2070cf0 on linux2)
-# using ./waf configure --build-profile=optimized --enable-examples --enable-tests
+# using ./waf configure --build-profile=debug --enable-examples --enable-tests
 #
 ----------------------------------------
 Setting top to
@@ -521,23 +521,14 @@ out: #define __SSP_STRONG__ 3
 
 (tool ar is already loaded, skipping)
 /usr/bin/g++
----------------------------------------------------
-Checking for compilation flag -march=native support
-==>
-int main() { return 0; }
-<==
-[1/1] Compiling [32mbuild/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/test.cpp[0m
-
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-DNS3_BUILD_PROFILE_OPTIMIZED', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/testbuild/test.cpp.1.o']
-ok
 ------------------------------------------------------
 Checking for compilation flag -Wl,--soname=foo support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-Wl,--soname=foo', '-DNS3_BUILD_PROFILE_OPTIMIZED', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-Wl,--soname=foo', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------
 Checking for program 'python'
@@ -640,12 +631,12 @@ int main(int argc, char **argv)
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_cffec0a7b9c203b656cb21a62ab9edc3/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_933662ef61183a2c6f1bd36fe892ecd8/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-fno-strict-aliasing', '-fstack-protector-strong', '-fwrapv', '-I/usr/include/python2.7', '-I/usr/include/x86_64-linux-gnu/python2.7', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-D_FORTIFY_SOURCE=2', '-DNDEBUG', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_cffec0a7b9c203b656cb21a62ab9edc3/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_cffec0a7b9c203b656cb21a62ab9edc3/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-fstack-protector-strong', '-fwrapv', '-I/usr/include/python2.7', '-I/usr/include/x86_64-linux-gnu/python2.7', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-D_FORTIFY_SOURCE=2', '-DNDEBUG', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_933662ef61183a2c6f1bd36fe892ecd8/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_933662ef61183a2c6f1bd36fe892ecd8/testbuild/testprog[0m
 
-['/usr/bin/g++', '-Xlinker', '-export-dynamic', '-Wl,-O1', '-Wl,-Bsymbolic-functions', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_cffec0a7b9c203b656cb21a62ab9edc3/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-L/usr/lib', '-lpython2.7', '-lpthread', '-ldl', '-lutil', '-lm']
+['/usr/bin/g++', '-Xlinker', '-export-dynamic', '-Wl,-O1', '-Wl,-Bsymbolic-functions', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_933662ef61183a2c6f1bd36fe892ecd8/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-L/usr/lib', '-lpython2.7', '-lpthread', '-ldl', '-lutil', '-lm']
 yes
 ------------------------------------------------------------------
 Asking python-config for pyext '--cflags --libs --ldflags' flags
@@ -677,30 +668,30 @@ int main(int argc, char **argv)
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_7e2915d94f06389b8cf6f7a3e90137e3/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_1276f7d97991a55d9d1f6c0215ffc182/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-fPIC', '-fno-strict-aliasing', '-fstack-protector-strong', '-fwrapv', '-I/usr/include/python2.7', '-I/usr/include/x86_64-linux-gnu/python2.7', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-D_FORTIFY_SOURCE=2', '-DNDEBUG', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_7e2915d94f06389b8cf6f7a3e90137e3/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_7e2915d94f06389b8cf6f7a3e90137e3/testbuild/testprog.so[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fPIC', '-fno-strict-aliasing', '-fstack-protector-strong', '-fwrapv', '-I/usr/include/python2.7', '-I/usr/include/x86_64-linux-gnu/python2.7', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-D_FORTIFY_SOURCE=2', '-DNDEBUG', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_1276f7d97991a55d9d1f6c0215ffc182/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_1276f7d97991a55d9d1f6c0215ffc182/testbuild/testprog.so[0m
 
-['/usr/bin/g++', '-shared', '-Xlinker', '-export-dynamic', '-Wl,-O1', '-Wl,-Bsymbolic-functions', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_7e2915d94f06389b8cf6f7a3e90137e3/testbuild/testprog.so', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-L/usr/lib', '-lpython2.7', '-lpthread', '-ldl', '-lutil', '-lm']
+['/usr/bin/g++', '-shared', '-Xlinker', '-export-dynamic', '-Wl,-O1', '-Wl,-Bsymbolic-functions', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_1276f7d97991a55d9d1f6c0215ffc182/testbuild/testprog.so', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-L/usr/lib', '-lpython2.7', '-lpthread', '-ldl', '-lutil', '-lm']
 yes
 ------------------------------------------------------------------
 Checking for compilation flag -fvisibility=hidden support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-fvisibility=hidden', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fvisibility=hidden', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -Wno-array-bounds support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-Wno-array-bounds', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-Wno-array-bounds', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------------------
 Checking for pybindgen location
@@ -757,12 +748,12 @@ Checking for boost linkage
 int main() { boost::system::error_code c; }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_cb2889f336af0d74b1cd8d51d60ff68f/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_ba96a98916786ce8ec1fb66367a1b177/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-I/usr/include', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_cb2889f336af0d74b1cd8d51d60ff68f/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_cb2889f336af0d74b1cd8d51d60ff68f/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-I/usr/include', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_ba96a98916786ce8ec1fb66367a1b177/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_ba96a98916786ce8ec1fb66367a1b177/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_cb2889f336af0d74b1cd8d51d60ff68f/testbuild/testprog', '-Wl,-Bstatic', '-L/usr/lib/x86_64-linux-gnu', '-Wl,-Bdynamic', '-L/usr/lib/x86_64-linux-gnu', '-lboost_system', '-lboost_signals', '-lboost_filesystem']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_ba96a98916786ce8ec1fb66367a1b177/testbuild/testprog', '-Wl,-Bstatic', '-L/usr/lib/x86_64-linux-gnu', '-Wl,-Bdynamic', '-L/usr/lib/x86_64-linux-gnu', '-lboost_system', '-lboost_signals', '-lboost_filesystem']
 ok
 ------------------------------------------------------------------
 Checking for click location
@@ -798,9 +789,9 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_a5e1325cbeabf4c1f3b618da7346459b/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_3b28dcb3a0f148a0275b353ba39cd24b/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_a5e1325cbeabf4c1f3b618da7346459b/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_3b28dcb3a0f148a0275b353ba39cd24b/testbuild/test.cpp.1.o']
 err: ../test.cpp: In function ‘int main(int, char**)’:
 ../test.cpp:5:7: error: ‘uint128_t’ was not declared in this scope
   if ((uint128_t *) 0) return 0;
@@ -822,8 +813,8 @@ from /home/sampath/OWC-master/src/core: Test does not build: Traceback (most rec
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 139940848616528: cxx test.cpp -> test.cpp.1.o}
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_a5e1325cbeabf4c1f3b618da7346459b/testbuild/test.cpp.1.o']
+	{task 140053272146832: cxx test.cpp -> test.cpp.1.o}
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_3b28dcb3a0f148a0275b353ba39cd24b/testbuild/test.cpp.1.o']
 
 not found
 from /home/sampath/OWC-master/src/core: The configuration failed
@@ -840,12 +831,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_e6656dcccdce5d403f157d1de63eba6b/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_f81c1791bdd57e39ce7e0118c82ca8bf/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_e6656dcccdce5d403f157d1de63eba6b/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_e6656dcccdce5d403f157d1de63eba6b/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_f81c1791bdd57e39ce7e0118c82ca8bf/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_f81c1791bdd57e39ce7e0118c82ca8bf/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_e6656dcccdce5d403f157d1de63eba6b/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_f81c1791bdd57e39ce7e0118c82ca8bf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking high precision implementation
@@ -861,12 +852,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_2be9e57240872b690a695244d4e480ed/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_f1ef26482555fb66247a16730174d632/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_2be9e57240872b690a695244d4e480ed/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_2be9e57240872b690a695244d4e480ed/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_f1ef26482555fb66247a16730174d632/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_f1ef26482555fb66247a16730174d632/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_2be9e57240872b690a695244d4e480ed/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_f1ef26482555fb66247a16730174d632/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header inttypes.h
@@ -879,12 +870,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_d3a1fc0e8c840b24335469d448aeb373/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_363e62a68e67e67be15a9d7dc87ae566/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_d3a1fc0e8c840b24335469d448aeb373/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_d3a1fc0e8c840b24335469d448aeb373/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_363e62a68e67e67be15a9d7dc87ae566/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_363e62a68e67e67be15a9d7dc87ae566/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_d3a1fc0e8c840b24335469d448aeb373/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_363e62a68e67e67be15a9d7dc87ae566/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -897,9 +888,9 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_1b640fc696cf41e71cfa245543463613/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_0705d22d39a71fb52ca82fc0d0ef7834/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_1b640fc696cf41e71cfa245543463613/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_0705d22d39a71fb52ca82fc0d0ef7834/testbuild/test.cpp.1.o']
 err: ../test.cpp:1:26: fatal error: sys/inttypes.h: No such file or directory
 compilation terminated.
 
@@ -910,8 +901,8 @@ from /home/sampath/OWC-master/src/core: Test does not build: Traceback (most rec
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 139940850279312: cxx test.cpp -> test.cpp.1.o}
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_1b640fc696cf41e71cfa245543463613/testbuild/test.cpp.1.o']
+	{task 140053272088400: cxx test.cpp -> test.cpp.1.o}
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_0705d22d39a71fb52ca82fc0d0ef7834/testbuild/test.cpp.1.o']
 
 not found
 from /home/sampath/OWC-master/src/core: The configuration failed
@@ -926,12 +917,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_a000ebbd8454e78d6444016fa5c14f26/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_b6c5540693ada371501554505887426e/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_a000ebbd8454e78d6444016fa5c14f26/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_a000ebbd8454e78d6444016fa5c14f26/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b6c5540693ada371501554505887426e/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_b6c5540693ada371501554505887426e/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_a000ebbd8454e78d6444016fa5c14f26/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_b6c5540693ada371501554505887426e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header sys/stat.h
@@ -944,12 +935,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_ae8445db962fcb80ffeb98340dd02587/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_82d186b6b2f02a78eae901872351a3c4/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_ae8445db962fcb80ffeb98340dd02587/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_ae8445db962fcb80ffeb98340dd02587/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_82d186b6b2f02a78eae901872351a3c4/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_82d186b6b2f02a78eae901872351a3c4/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_ae8445db962fcb80ffeb98340dd02587/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_82d186b6b2f02a78eae901872351a3c4/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header dirent.h
@@ -962,12 +953,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_582791cec6e9f464c0a2b9cbe91e54be/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_67f1a66ce5bc059a5451264fb56cb00e/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_582791cec6e9f464c0a2b9cbe91e54be/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_582791cec6e9f464c0a2b9cbe91e54be/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_67f1a66ce5bc059a5451264fb56cb00e/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_67f1a66ce5bc059a5451264fb56cb00e/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_582791cec6e9f464c0a2b9cbe91e54be/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_67f1a66ce5bc059a5451264fb56cb00e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header stdlib.h
@@ -980,12 +971,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_bf36a26cd164f35c22b38d0653e7fb60/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_500560f678c31a31435728a8ac825d62/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_bf36a26cd164f35c22b38d0653e7fb60/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_bf36a26cd164f35c22b38d0653e7fb60/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_500560f678c31a31435728a8ac825d62/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_500560f678c31a31435728a8ac825d62/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_bf36a26cd164f35c22b38d0653e7fb60/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_500560f678c31a31435728a8ac825d62/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header signal.h
@@ -998,12 +989,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_d4ce6101cac91eb73bd0d898e0c84571/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_64b77c55476e25183d723c84aad790b4/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_d4ce6101cac91eb73bd0d898e0c84571/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_d4ce6101cac91eb73bd0d898e0c84571/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_64b77c55476e25183d723c84aad790b4/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_64b77c55476e25183d723c84aad790b4/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_d4ce6101cac91eb73bd0d898e0c84571/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_64b77c55476e25183d723c84aad790b4/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header pthread.h
@@ -1018,12 +1009,12 @@ int main ()
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_2fa5a7afb662f5f58e8f74108a1f997c/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_2648b3c08035cd71e7475d3f03251971/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_2fa5a7afb662f5f58e8f74108a1f997c/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_2fa5a7afb662f5f58e8f74108a1f997c/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_2648b3c08035cd71e7475d3f03251971/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_2648b3c08035cd71e7475d3f03251971/testbuild/testprog[0m
 
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_2fa5a7afb662f5f58e8f74108a1f997c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_2648b3c08035cd71e7475d3f03251971/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header stdint.h
@@ -1036,12 +1027,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_2be9e57240872b690a695244d4e480ed/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_f1ef26482555fb66247a16730174d632/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_2be9e57240872b690a695244d4e480ed/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_2be9e57240872b690a695244d4e480ed/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_f1ef26482555fb66247a16730174d632/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_f1ef26482555fb66247a16730174d632/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_2be9e57240872b690a695244d4e480ed/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_f1ef26482555fb66247a16730174d632/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header inttypes.h
@@ -1054,12 +1045,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_d3a1fc0e8c840b24335469d448aeb373/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_363e62a68e67e67be15a9d7dc87ae566/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_d3a1fc0e8c840b24335469d448aeb373/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_d3a1fc0e8c840b24335469d448aeb373/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_363e62a68e67e67be15a9d7dc87ae566/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_363e62a68e67e67be15a9d7dc87ae566/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_d3a1fc0e8c840b24335469d448aeb373/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_363e62a68e67e67be15a9d7dc87ae566/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -1072,9 +1063,9 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_1b640fc696cf41e71cfa245543463613/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_0705d22d39a71fb52ca82fc0d0ef7834/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_1b640fc696cf41e71cfa245543463613/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_0705d22d39a71fb52ca82fc0d0ef7834/testbuild/test.cpp.1.o']
 err: ../test.cpp:1:26: fatal error: sys/inttypes.h: No such file or directory
 compilation terminated.
 
@@ -1085,8 +1076,8 @@ from /home/sampath/OWC-master/src/core: Test does not build: Traceback (most rec
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 139940849206544: cxx test.cpp -> test.cpp.1.o}
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_1b640fc696cf41e71cfa245543463613/testbuild/test.cpp.1.o']
+	{task 140053270965968: cxx test.cpp -> test.cpp.1.o}
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_0705d22d39a71fb52ca82fc0d0ef7834/testbuild/test.cpp.1.o']
 
 not found
 from /home/sampath/OWC-master/src/core: The configuration failed
@@ -1100,12 +1091,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_5b8c1bc0ce60b31f9e3221f21da39a71/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_ce887eb76d7a7964fb200f1104968c80/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_5b8c1bc0ce60b31f9e3221f21da39a71/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_5b8c1bc0ce60b31f9e3221f21da39a71/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_ce887eb76d7a7964fb200f1104968c80/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_ce887eb76d7a7964fb200f1104968c80/testbuild/testprog[0m
 
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_5b8c1bc0ce60b31f9e3221f21da39a71/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_ce887eb76d7a7964fb200f1104968c80/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
 yes
 ------------------------------------------------------------------
 Checking for header sys/ioctl.h
@@ -1118,12 +1109,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_11f24a5e72a940cb9ed9c29877df3faa/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_9a19c19fba1f8f8c4c20660536b189fd/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_11f24a5e72a940cb9ed9c29877df3faa/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_11f24a5e72a940cb9ed9c29877df3faa/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_9a19c19fba1f8f8c4c20660536b189fd/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_9a19c19fba1f8f8c4c20660536b189fd/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_11f24a5e72a940cb9ed9c29877df3faa/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_9a19c19fba1f8f8c4c20660536b189fd/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header net/if.h
@@ -1136,12 +1127,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_2ca087ffd6965908996de0c0606221fe/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_c56adf8057e233f4fdc8daab81de917e/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_2ca087ffd6965908996de0c0606221fe/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_2ca087ffd6965908996de0c0606221fe/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_c56adf8057e233f4fdc8daab81de917e/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c56adf8057e233f4fdc8daab81de917e/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_2ca087ffd6965908996de0c0606221fe/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_c56adf8057e233f4fdc8daab81de917e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header net/ethernet.h
@@ -1154,12 +1145,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_044d563179fc0f10125cf7493e1b6edb/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_a033ef029ac7d1e61e973a0184fd49e5/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_044d563179fc0f10125cf7493e1b6edb/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_044d563179fc0f10125cf7493e1b6edb/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_a033ef029ac7d1e61e973a0184fd49e5/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_a033ef029ac7d1e61e973a0184fd49e5/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_044d563179fc0f10125cf7493e1b6edb/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_a033ef029ac7d1e61e973a0184fd49e5/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header linux/if_tun.h
@@ -1172,12 +1163,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_576894e1e4eb1092db8d47d958ca5dcf/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_77b37b6f09a5a7d1ac4f05339eec7a66/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_576894e1e4eb1092db8d47d958ca5dcf/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_576894e1e4eb1092db8d47d958ca5dcf/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_77b37b6f09a5a7d1ac4f05339eec7a66/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_77b37b6f09a5a7d1ac4f05339eec7a66/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_576894e1e4eb1092db8d47d958ca5dcf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_77b37b6f09a5a7d1ac4f05339eec7a66/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header netpacket/packet.h
@@ -1190,12 +1181,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_5c58007ca1d799d3904d2222a4eef7c1/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_b02d3fb64b06cae33b4e884752651885/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_5c58007ca1d799d3904d2222a4eef7c1/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_5c58007ca1d799d3904d2222a4eef7c1/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b02d3fb64b06cae33b4e884752651885/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_b02d3fb64b06cae33b4e884752651885/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_5c58007ca1d799d3904d2222a4eef7c1/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_b02d3fb64b06cae33b4e884752651885/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for NSC location
@@ -1220,12 +1211,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_576894e1e4eb1092db8d47d958ca5dcf/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_77b37b6f09a5a7d1ac4f05339eec7a66/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_576894e1e4eb1092db8d47d958ca5dcf/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_576894e1e4eb1092db8d47d958ca5dcf/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_77b37b6f09a5a7d1ac4f05339eec7a66/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_77b37b6f09a5a7d1ac4f05339eec7a66/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_576894e1e4eb1092db8d47d958ca5dcf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/sampath/OWC-master/build/.conf_check_77b37b6f09a5a7d1ac4f05339eec7a66/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 (tool boost is already loaded, skipping)
 ------------------------------------------------------------------
@@ -1255,54 +1246,54 @@ Checking for compilation flag -Wno-error=deprecated-d... support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-Wno-error=deprecated-declarations', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-Wno-error=deprecated-declarations', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -Wno-error=deprecated-d... support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_05d7030c158b0d7b3b078e31600f2930/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_500f015944ce5d41368910dbd640eca9/test.c[0m
 
-['/usr/bin/gcc', '-Wno-error=deprecated-declarations', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_05d7030c158b0d7b3b078e31600f2930/testbuild/test.c.1.o']
+['/usr/bin/gcc', '-Wno-error=deprecated-declarations', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_500f015944ce5d41368910dbd640eca9/testbuild/test.c.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -fstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-Wno-error=deprecated-declarations', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-Wno-error=deprecated-declarations', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -fstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_05d7030c158b0d7b3b078e31600f2930/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_500f015944ce5d41368910dbd640eca9/test.c[0m
 
-['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_05d7030c158b0d7b3b078e31600f2930/testbuild/test.c.1.o']
+['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_500f015944ce5d41368910dbd640eca9/testbuild/test.c.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -Wstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/test.cpp[0m
 
-['/usr/bin/g++', '-O3', '-g', '-Wall', '-Werror', '-march=native', '-fstrict-overflow', '-Wstrict-overflow=2', '-std=c++11', '-Wno-error=deprecated-declarations', '-fstrict-aliasing', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_b9b5cc38f8a03218178a48e9c16999ff/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-Wno-error=deprecated-declarations', '-fstrict-aliasing', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_67d0a9ce12ad914b74ac1ea98f454896/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -Wstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_05d7030c158b0d7b3b078e31600f2930/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_500f015944ce5d41368910dbd640eca9/test.c[0m
 
-['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_OPTIMIZED', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_05d7030c158b0d7b3b078e31600f2930/testbuild/test.c.1.o']
+['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/sampath/OWC-master/build/.conf_check_500f015944ce5d41368910dbd640eca9/testbuild/test.c.1.o']
 ok
 ------------------------------------------------------------------
 Checking for program 'doxygen'
